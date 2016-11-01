@@ -50,7 +50,6 @@ module.exports = {
           })
         }
       },
-
       {
         test: /\.scss$/,
         include: paths.appSrc,
@@ -60,21 +59,10 @@ module.exports = {
           'postcss?sourceMap',
           'sass?sourceMap'
         ]
-
-
-        // 'style!css?' + JSON.stringify({
-        //   modules: true,
-        //   sourceMap: true,
-        //   importLoaders: 2
-        // }) + '!postcss?' + JSON.stringify({
-        //   sourceMap: true
-        // }) + '!sass?' + JSON.stringify({
-        //   sourceMap: true
-        // })
       },
       {
         test: /\.css$/,
-        loader: 'style!css?importLoaders=1!postcss'
+        loader: 'style!css?sourceMap&importLoaders=1!postcss?sourceMap'
       },
       {
         test: /\.json$/,

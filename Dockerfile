@@ -13,9 +13,10 @@ RUN npm install --loglevel http
 COPY . /usr/src/app
 
 # Build and optimize react app
+ENV NODE_ENV production
 RUN npm run build
 
 EXPOSE 9000
 
 # defined in package.json
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "server" ]
