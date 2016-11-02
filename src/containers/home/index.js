@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
+import AddVehicle from 'components/add-vehicle';
 // import styles from './home.scss';
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
-      <p>home</p>
+      <AddVehicle />
     );
   }
 }
 
-export default App;
+export default Home;

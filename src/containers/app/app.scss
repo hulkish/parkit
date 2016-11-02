@@ -1,16 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Righteous:400');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
-
-// @import "~@salesforce-ux/design-system/scss/index.scss";
-// :global {
-//   @import "sanitize.css/sanitize.css";
-//   @import "@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css";
-// }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+:global {
+  @import url('https://fonts.googleapis.com/css?family=Righteous:400');
+  @import "./slds";
 }
 
 .appIntro {

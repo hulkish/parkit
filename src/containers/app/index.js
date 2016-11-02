@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import Header from 'components/header';
-import HomeContainer from 'containers/home';
-
-import '@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css';
 import styles from './app.scss';
 
 class App extends Component {
@@ -10,9 +7,13 @@ class App extends Component {
     return (
       <div className={styles.app}>
         <Header />
-        <section>
-          <HomeContainer />
-        </section>
+        <div className="slds-container--large">
+          <div className="slds-grid">
+            <div className="slds-col slds-p-around--small">
+              {this.props.children}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,4 +1,6 @@
-process.env.NODE_ENV = 'production';
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'production';
+}
 
 require('dotenv').config({silent: true});
 
@@ -9,7 +11,9 @@ var filesize = require('filesize');
 var gzipSize = require('gzip-size').sync;
 var rimrafSync = require('rimraf').sync;
 var webpack = require('webpack');
-var config = require('../config/webpack.config.prod');
+var config = require('../config/webpack.config.' + (
+  process.env.NODE_ENV === 'production' ? 'prod' : 'dev'
+));
 var paths = require('../config/paths');
 var checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 var recursive = require('recursive-readdir');

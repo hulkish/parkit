@@ -16,6 +16,7 @@ module.exports = {
   entry: [
     require.resolve('react-dev-utils/webpackHotDevClient'),
     require.resolve('./polyfills'),
+    require.resolve('../src/reactoron'),
     paths.appIndexJs
   ],
   output: {
@@ -52,17 +53,22 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        include: paths.appSrc,
+        include: [].concat([
+          paths.appSrc,
+          paths.sassPaths
+        ]),
         loaders: [
           'style',
-          'css?modules&sourceMap&importLoaders=2',
+          'css?localIdentName=[name]__[local]__[hash:base64:8]&camelCase&modules&sourceMap&importLoaders=2',
           'postcss?sourceMap',
+          // 'resolve-url?sourceMap',
           'sass?sourceMap'
         ]
       },
       {
         test: /\.css$/,
         loader: 'style!css?sourceMap&importLoaders=1!postcss?sourceMap'
+        // loader: 'style!css?sourceMap&importLoaders=1!postcss?sourceMap!resolve-url?sourceMap'
       },
       {
         test: /\.json$/,

@@ -85,10 +85,13 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss')
+        // loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-autoprefixer!postcss!resolve-url')
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2&-autoprefixer!postcss!sass')
+        loader: ExtractTextPlugin.extract('style', 'css?camelCase&modules&importLoaders=2&-autoprefixer!postcss!sass')
+        // loader: ExtractTextPlugin.extract('style', 'css?localIdentName=[hash:base64:16]&modules&importLoaders=2&-autoprefixer!postcss!sass')
+        // loader: ExtractTextPlugin.extract('style', 'css?localIdentName=[name]__[local]__[hash:base64:5]&modules&importLoaders=2&-autoprefixer!postcss!resolve-url!sass?sourceMap')
       },
       {
         test: /\.json$/,
